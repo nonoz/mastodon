@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 
 class DropdownMenu extends React.PureComponent {
 
+  static contextTypes = {
+    router: PropTypes.object
+  };
+
   static propTypes = {
     icon: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
@@ -24,14 +28,19 @@ class DropdownMenu extends React.PureComponent {
     this.dropdown = c;
   }
 
-  handleClick = (i, e) => {
-    const { action } = this.props.items[i];
+  handleClick = (e) => {
+    const i = Number(e.currentTarget.getAttribute('data-index'));
+    const { action, to } = this.props.items[i];
+
+    e.preventDefault();
 
     if (typeof action === 'function') {
-      e.preventDefault();
       action();
-      this.dropdown.hide();
+    } else if (to) {
+      this.context.router.push(to);
     }
+
+    this.dropdown.hide();
   }
 
   renderItem = (item, i) => {
@@ -43,7 +52,7 @@ class DropdownMenu extends React.PureComponent {
 
     return (
       <li className='dropdown__content-list-item' key={ text + i }>
-        <a href={href} target='_blank' rel='noopener' onClick={this.handleClick.bind(this, i)} className='dropdown__content-list-link'>
+        <a href={href} target='_blank' rel='noopener' onClick={this.handleClick} data-index={i} className='dropdown__content-list-link'>
           {text}
         </a>
       </li>

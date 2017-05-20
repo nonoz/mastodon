@@ -3,11 +3,8 @@ import { length } from 'stringz';
 import { default as dateFormat } from 'date-fns/format';
 import distanceInWordsStrict from 'date-fns/distance_in_words_strict';
 import { delegate } from 'rails-ujs';
-import Rails from 'rails-ujs';
 
 require.context('../images/', true);
-
-Rails.start();
 
 const parseFormat = (format) => format.replace(/%(\w)/g, (_, modifier) => {
   switch (modifier) {
@@ -49,7 +46,7 @@ const parseFormat = (format) => format.replace(/%(\w)/g, (_, modifier) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  for (const content of document.getElementsByClassName('emojify')) {
+  for (const content of document.querySelectorAll('.emojify')) {
     content.innerHTML = emojify(content.innerHTML);
   }
 
@@ -104,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   delegate(document, '.account_note', 'input', ({ target }) => {
-    const [noteCounter, ] = document.getElementsByClassName('.note-counter');
+    const [noteCounter, ] = document.getElementsByClassName('note-counter');
     noteCounter.textContent = 160 - length(target.value);
   });
 });
