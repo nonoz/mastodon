@@ -96,48 +96,35 @@
          style="fill:#483537;fill-opacity:1;stroke:none;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
     <g
-       id="g4161">
-      <text
-         inkscape:export-ydpi="299.51001"
-         inkscape:export-xdpi="299.51001"
-         sodipodi:linespacing="125%"
-         id="text3378-7"
-         y="594.47064"
-         x="415.09518"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:0.50196081;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.5px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#ffffff;fill-opacity:0.50196081;"
-           y="594.47064"
-           x="415.09518"
-           id="tspan3380-5"
-           sodipodi:role="line">西</tspan></text>
-      <text
-         inkscape:export-ydpi="299.51001"
-         inkscape:export-xdpi="299.51001"
-         sodipodi:linespacing="125%"
-         id="text3378-7-6"
-         y="594.91418"
-         x="455.07822"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:0.50196081;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-         xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.5px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#ffffff;fill-opacity:0.50196081;"
-           y="594.91418"
-           x="455.07822"
-           id="tspan3380-5-3"
-           sodipodi:role="line">宮</tspan></text>
+       id="g4179"
+       transform="translate(61.164737,-24.218407)">
       <text
          inkscape:export-ydpi="299.51001"
          inkscape:export-xdpi="299.51001"
          sodipodi:linespacing="125%"
          id="text3378-7-9"
-         y="594.20587"
-         x="416.30389"
+         y="618.68945"
+         x="353.69461"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:#ffffff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:#ffffff;stroke-opacity:0.50196078"
+           y="618.68945"
+           x="353.69461"
+           id="tspan3380-5-1"
+           sodipodi:role="line">西宮</tspan></text>
+      <text
+         inkscape:export-ydpi="299.51001"
+         inkscape:export-xdpi="299.51001"
+         sodipodi:linespacing="125%"
+         id="text3378-7-9-5"
+         y="618.68945"
+         x="353.69461"
          style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1"
-           y="594.20587"
-           x="416.30389"
-           id="tspan3380-5-1"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:none;stroke-opacity:1"
+           y="618.68945"
+           x="353.69461"
+           id="tspan3380-5-1-3"
            sodipodi:role="line">西宮</tspan></text>
     </g>
   </g>
