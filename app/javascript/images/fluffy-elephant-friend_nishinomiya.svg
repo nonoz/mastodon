@@ -102,7 +102,7 @@
     </g>
     <g
        id="g4209"
-       transform="translate(-39.067649,-1.5909902)">
+       transform="translate(-25.986173,-3.0052038)">
       <text
          inkscape:export-ydpi="299.51001"
          inkscape:export-xdpi="299.51001"
@@ -146,36 +146,42 @@
          y="638.56323"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:HGSSoeiPresenceEB;-inkscape-font-specification:HGSSoeiPresenceEB">ぱおぉーん</tspan></text>
     <g
-       id="g4203"
-       transform="translate(57.27565,-33.76435)">
-      <g
-         id="g4215"
-         transform="translate(-2.1213204,33.410796)">
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:#202020;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078"
-           x="401.84698"
-           y="595.21771"
-           id="text4167"
-           sodipodi:linespacing="125%"><tspan
-             sodipodi:role="line"
-             id="tspan4169"
-             x="401.84698"
-             y="595.21771"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:#202020;stroke-opacity:0.50196078">丼</tspan></text>
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078"
-           x="401.84698"
-           y="595.21771"
-           id="text4167-7"
-           sodipodi:linespacing="125%"><tspan
-             sodipodi:role="line"
-             id="tspan4169-4"
-             x="401.84698"
-             y="595.21771"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:none;stroke-opacity:0.50196078">丼</tspan></text>
-      </g>
+       id="g3388"
+       transform="translate(-3.7123106,2.2980971)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text4167"
+         y="571.88318"
+         x="473.97186"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:#202020;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:#202020;stroke-opacity:0.50196078"
+           y="571.88318"
+           x="473.97186"
+           id="tspan4169"
+           sodipodi:role="line">ど</tspan><tspan
+           id="tspan3384"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:#202020;stroke-opacity:0.50196078"
+           y="593.75818"
+           x="473.97186"
+           sodipodi:role="line">ん</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text4167-7"
+         y="571.88318"
+         x="473.97186"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:none;stroke-opacity:0.50196078"
+           y="571.88318"
+           x="473.97186"
+           id="tspan4169-4"
+           sodipodi:role="line">ど</tspan><tspan
+           id="tspan3386"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:none;stroke-opacity:0.50196078"
+           y="593.75818"
+           x="473.97186"
+           sodipodi:role="line">ん</tspan></text>
     </g>
   </g>
 </svg>
