@@ -15,7 +15,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="fluffy-elephant-friend_nishinomiya.svg">
+   sodipodi:docname="fluffy-elephant-friend_nishinomiya.svg"
+   inkscape:export-filename="E:\git\nonoz\mastodon\app\javascript\images\fluffy-elephant-friend_nishinomiya.png"
+   inkscape:export-xdpi="299.51001"
+   inkscape:export-ydpi="299.51001">
   <defs
      id="defs4">
     <inkscape:path-effect
@@ -32,7 +35,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="5.6568542"
      inkscape:cx="403.81281"
-     inkscape:cy="474.92653"
+     inkscape:cy="497.70634"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -98,22 +101,20 @@
          style="fill:#483537;fill-opacity:1;stroke:none;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
     </g>
     <g
-       id="g4157"
-       transform="translate(10.253048,-11.844039)"
-       inkscape:export-xdpi="299.51001"
-       inkscape:export-ydpi="299.51001">
+       id="g4209"
+       transform="translate(-39.067649,-1.5909902)">
       <text
          inkscape:export-ydpi="299.51001"
          inkscape:export-xdpi="299.51001"
          sodipodi:linespacing="125%"
          id="text3378-7-9"
-         y="606.08026"
-         x="403.69208"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.76862745"
+         y="594.88531"
+         x="414.79868"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:#202020;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50196078"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.76862745"
-           y="606.08026"
-           x="403.69208"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:#202020;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.50196078"
+           y="594.88531"
+           x="414.79868"
            id="tspan3380-5-1"
            sodipodi:role="line">西宮</tspan></text>
       <text
@@ -121,15 +122,60 @@
          inkscape:export-xdpi="299.51001"
          sodipodi:linespacing="125%"
          id="text3378-7-9-5"
-         y="606.08026"
-         x="403.69208"
+         y="594.88531"
+         x="414.79868"
          style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:none;stroke-opacity:1"
-           y="606.08026"
-           x="403.69208"
+           y="594.88531"
+           x="414.79868"
            id="tspan3380-5-1-3"
            sodipodi:role="line">西宮</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="239.83745"
+       y="638.56323"
+       id="text4163"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.96592583,-0.25881905,0.25881905,0.96592583,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan4165"
+         x="239.83745"
+         y="638.56323"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:HGSSoeiPresenceEB;-inkscape-font-specification:HGSSoeiPresenceEB">ぱおぉーん</tspan></text>
+    <g
+       id="g4203"
+       transform="translate(57.27565,-33.76435)">
+      <g
+         id="g4215"
+         transform="translate(-2.1213204,33.410796)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:#202020;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078"
+           x="401.84698"
+           y="595.21771"
+           id="text4167"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4169"
+             x="401.84698"
+             y="595.21771"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:#202020;stroke-opacity:0.50196078">丼</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#189e80;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.50196078"
+           x="401.84698"
+           y="595.21771"
+           id="text4167-7"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4169-4"
+             x="401.84698"
+             y="595.21771"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:'JNR-SB-Font OTF';-inkscape-font-specification:'JNR-SB-Font OTF';fill:#189e80;fill-opacity:1;stroke:none;stroke-opacity:0.50196078">丼</tspan></text>
+      </g>
     </g>
   </g>
 </svg>
