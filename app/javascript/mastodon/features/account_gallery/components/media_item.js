@@ -3,10 +3,10 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 import Permalink from '../../../components/permalink';
 
-class MediaItem extends ImmutablePureComponent {
+export default class MediaItem extends ImmutablePureComponent {
 
   static propTypes = {
-    media: ImmutablePropTypes.map.isRequired
+    media: ImmutablePropTypes.map.isRequired,
   };
 
   render () {
@@ -28,12 +28,12 @@ class MediaItem extends ImmutablePureComponent {
         <Permalink
           to={`/statuses/${status.get('id')}`}
           href={status.get('url')}
-          style={style}>
+          style={style}
+        >
           {content}
         </Permalink>
       </div>
     );
   }
-}
 
-export default MediaItem;
+}

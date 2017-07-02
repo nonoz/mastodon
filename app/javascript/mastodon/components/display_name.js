@@ -3,10 +3,10 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import escapeTextContentForBrowser from 'escape-html';
 import emojify from '../emoji';
 
-class DisplayName extends React.PureComponent {
+export default class DisplayName extends React.PureComponent {
 
   static propTypes = {
-    account: ImmutablePropTypes.map.isRequired
+    account: ImmutablePropTypes.map.isRequired,
   };
 
   render () {
@@ -21,5 +21,3 @@ class DisplayName extends React.PureComponent {
   }
 
 }
-
-export default DisplayName;

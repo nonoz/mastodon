@@ -13,12 +13,12 @@ import ImmutablePureComponent from 'react-immutable-pure-component';
 const messages = defineMessages({
   unfollow: { id: 'account.unfollow', defaultMessage: 'Unfollow' },
   follow: { id: 'account.follow', defaultMessage: 'Follow' },
-  requested: { id: 'account.requested', defaultMessage: 'Awaiting approval' }
+  requested: { id: 'account.requested', defaultMessage: 'Awaiting approval' },
 });
 
 const makeMapStateToProps = () => {
-  const mapStateToProps = (state, props) => ({
-    autoPlayGif: state.getIn(['meta', 'auto_play_gif'])
+  const mapStateToProps = state => ({
+    autoPlayGif: state.getIn(['meta', 'auto_play_gif']),
   });
 
   return mapStateToProps;
@@ -28,11 +28,11 @@ class Avatar extends ImmutablePureComponent {
 
   static propTypes = {
     account: ImmutablePropTypes.map.isRequired,
-    autoPlayGif: PropTypes.bool.isRequired
+    autoPlayGif: PropTypes.bool.isRequired,
   };
 
   state = {
-    isHovered: false
+    isHovered: false,
   };
 
   handleMouseOver = () => {
@@ -52,7 +52,7 @@ class Avatar extends ImmutablePureComponent {
     return (
       <Motion defaultStyle={{ radius: 90 }} style={{ radius: spring(isHovered ? 30 : 90, { stiffness: 180, damping: 12 }) }}>
         {({ radius }) =>
-          <a
+          <a // eslint-disable-line jsx-a11y/anchor-has-content
             href={account.get('url')}
             className='account__header__avatar'
             target='_blank'
@@ -70,14 +70,16 @@ class Avatar extends ImmutablePureComponent {
 
 }
 
-class Header extends ImmutablePureComponent {
+@connect(makeMapStateToProps)
+@injectIntl
+export default class Header extends ImmutablePureComponent {
 
   static propTypes = {
     account: ImmutablePropTypes.map,
     me: PropTypes.number.isRequired,
     onFollow: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
-    autoPlayGif: PropTypes.bool.isRequired
+    autoPlayGif: PropTypes.bool.isRequired,
   };
 
   render () {
@@ -97,14 +99,14 @@ class Header extends ImmutablePureComponent {
     }
 
     if (me !== account.get('id') && account.getIn(['relationship', 'followed_by'])) {
-      info = <span className='account--follows-info'><FormattedMessage id='account.follows_you' defaultMessage='Follows you' /></span>
+      info = <span className='account--follows-info'><FormattedMessage id='account.follows_you' defaultMessage='Follows you' /></span>;
     }
 
     if (me !== account.get('id')) {
       if (account.getIn(['relationship', 'requested'])) {
         actionBtn = (
           <div className='account--action-button'>
-            <IconButton size={26} disabled={true} icon='hourglass' title={intl.formatMessage(messages.requested)} />
+            <IconButton size={26} disabled icon='hourglass' title={intl.formatMessage(messages.requested)} />
           </div>
         );
       } else if (!account.getIn(['relationship', 'blocking'])) {
@@ -140,5 +142,3 @@ class Header extends ImmutablePureComponent {
   }
 
 }
-
-export default connect(makeMapStateToProps)(injectIntl(Header));

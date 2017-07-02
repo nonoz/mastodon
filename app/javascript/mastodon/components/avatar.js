@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Avatar extends React.PureComponent {
+export default class Avatar extends React.PureComponent {
 
   static propTypes = {
     src: PropTypes.string.isRequired,
@@ -9,17 +9,17 @@ class Avatar extends React.PureComponent {
     size: PropTypes.number.isRequired,
     style: PropTypes.object,
     animate: PropTypes.bool,
-    inline: PropTypes.bool
+    inline: PropTypes.bool,
   };
 
   static defaultProps = {
     animate: false,
     size: 20,
-    inline: false
+    inline: false,
   };
 
   state = {
-    hovering: true
+    hovering: false,
   };
 
   handleMouseEnter = () => {
@@ -46,7 +46,7 @@ class Avatar extends React.PureComponent {
       ...this.props.style,
       width: `${size}px`,
       height: `${size}px`,
-      backgroundSize: `${size}px ${size}px`
+      backgroundSize: `${size}px ${size}px`,
     };
 
     if (hovering || animate) {
@@ -66,5 +66,3 @@ class Avatar extends React.PureComponent {
   }
 
 }
-
-export default Avatar;

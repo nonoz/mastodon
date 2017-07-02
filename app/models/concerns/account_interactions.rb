@@ -29,6 +29,12 @@ module AccountInteractions
       blocked_domains = AccountDomainBlock.where(account_id: account_id, domain: accounts_map.values).pluck(:domain)
       accounts_map.map { |id, domain| [id, blocked_domains.include?(domain)] }.to_h
     end
+
+    private
+
+    def follow_mapping(query, field)
+      query.pluck(field).each_with_object({}) { |id, mapping| mapping[id] = true }
+    end
   end
 
   included do
@@ -50,6 +56,8 @@ module AccountInteractions
     # Mute relationships
     has_many :mute_relationships, class_name: 'Mute', foreign_key: 'account_id', dependent: :destroy
     has_many :muting, -> { order('mutes.id desc') }, through: :mute_relationships, source: :target_account
+    has_many :muted_by_relationships, class_name: 'Mute', foreign_key: :target_account_id, dependent: :destroy
+    has_many :muted_by, -> { order('mutes.id desc') }, through: :muted_by_relationships, source: :account
     has_many :conversation_mutes, dependent: :destroy
     has_many :domain_blocks, class_name: 'AccountDomainBlock', dependent: :destroy
   end

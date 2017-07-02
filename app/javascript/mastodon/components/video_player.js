@@ -11,7 +11,8 @@ const messages = defineMessages({
   expand_video: { id: 'video_player.expand', defaultMessage: 'Expand video' },
 });
 
-class VideoPlayer extends React.PureComponent {
+@injectIntl
+export default class VideoPlayer extends React.PureComponent {
 
   static propTypes = {
     media: ImmutablePropTypes.map.isRequired,
@@ -20,12 +21,12 @@ class VideoPlayer extends React.PureComponent {
     sensitive: PropTypes.bool,
     intl: PropTypes.object.isRequired,
     autoplay: PropTypes.bool,
-    onOpenVideo: PropTypes.func.isRequired
+    onOpenVideo: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     width: 239,
-    height: 110
+    height: 110,
   };
 
   state = {
@@ -33,7 +34,7 @@ class VideoPlayer extends React.PureComponent {
     preview: true,
     muted: true,
     hasAudio: true,
-    videoError: false
+    videoError: false,
   };
 
   handleClick = () => {
@@ -59,7 +60,7 @@ class VideoPlayer extends React.PureComponent {
   handleVisibility = () => {
     this.setState({
       visible: !this.state.visible,
-      preview: true
+      preview: true,
     });
   }
 
@@ -184,7 +185,7 @@ class VideoPlayer extends React.PureComponent {
           ref={this.setRef}
           src={media.get('url')}
           autoPlay={!isIOS()}
-          loop={true}
+          loop
           muted={this.state.muted}
           onClick={this.handleVideoClick}
         />
@@ -193,5 +194,3 @@ class VideoPlayer extends React.PureComponent {
   }
 
 }
-
-export default injectIntl(VideoPlayer);

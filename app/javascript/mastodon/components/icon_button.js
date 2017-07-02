@@ -3,7 +3,7 @@ import Motion from 'react-motion/lib/Motion';
 import spring from 'react-motion/lib/spring';
 import PropTypes from 'prop-types';
 
-class IconButton extends React.PureComponent {
+export default class IconButton extends React.PureComponent {
 
   static propTypes = {
     className: PropTypes.string,
@@ -17,7 +17,7 @@ class IconButton extends React.PureComponent {
     disabled: PropTypes.bool,
     inverted: PropTypes.bool,
     animate: PropTypes.bool,
-    overlay: PropTypes.bool
+    overlay: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -25,7 +25,7 @@ class IconButton extends React.PureComponent {
     active: false,
     disabled: false,
     animate: false,
-    overlay: false
+    overlay: false,
   };
 
   handleClick = (e) =>  {
@@ -43,7 +43,7 @@ class IconButton extends React.PureComponent {
       height: `${this.props.size * 1.28571429}px`,
       lineHeight: `${this.props.size}px`,
       ...this.props.style,
-      ...(this.props.active ? this.props.activeStyle : {})
+      ...(this.props.active ? this.props.activeStyle : {}),
     };
 
     const classes = ['icon-button'];
@@ -65,7 +65,7 @@ class IconButton extends React.PureComponent {
     }
 
     if (this.props.className) {
-      classes.push(this.props.className)
+      classes.push(this.props.className);
     }
 
     return (
@@ -76,7 +76,8 @@ class IconButton extends React.PureComponent {
             title={this.props.title}
             className={classes.join(' ')}
             onClick={this.handleClick}
-            style={style}>
+            style={style}
+          >
             <i style={{ transform: `rotate(${rotate}deg)` }} className={`fa fa-fw fa-${this.props.icon}`} aria-hidden='true' />
           </button>
         }
@@ -85,5 +86,3 @@ class IconButton extends React.PureComponent {
   }
 
 }
-
-export default IconButton;

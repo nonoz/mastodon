@@ -7,7 +7,7 @@ const createAudio = sources => {
     audio.appendChild(source);
   });
   return audio;
-}
+};
 
 const play = audio => {
   if (!audio.paused) {
@@ -27,12 +27,12 @@ export default function soundsMiddleware() {
       },
       {
         src: '/sounds/boop.mp3',
-        type: 'audio/mpeg'
+        type: 'audio/mpeg',
       },
     ]),
   };
 
-  return ({ dispatch }) => next => (action) => {
+  return () => next => action => {
     if (action.meta && action.meta.sound && soundCache[action.meta.sound]) {
       play(soundCache[action.meta.sound]);
     }
