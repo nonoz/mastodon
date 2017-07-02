@@ -6,7 +6,7 @@ import ActionBar from '../../account/components/action_bar';
 import MissingIndicator from '../../../components/missing_indicator';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 
-class Header extends ImmutablePureComponent {
+export default class Header extends ImmutablePureComponent {
 
   static propTypes = {
     account: ImmutablePropTypes.map,
@@ -21,7 +21,7 @@ class Header extends ImmutablePureComponent {
   };
 
   static contextTypes = {
-    router: PropTypes.object
+    router: PropTypes.object,
   };
 
   handleFollow = () => {
@@ -33,12 +33,11 @@ class Header extends ImmutablePureComponent {
   }
 
   handleMention = () => {
-    this.props.onMention(this.props.account, this.context.router);
+    this.props.onMention(this.props.account, this.context.router.history);
   }
 
   handleReport = () => {
     this.props.onReport(this.props.account);
-    this.context.router.push('/report');
   }
 
   handleMute = () => {
@@ -91,5 +90,3 @@ class Header extends ImmutablePureComponent {
   }
 
 }
-
-export default Header;

@@ -1,6 +1,6 @@
 import React from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import punycode from 'punycode'
+import punycode from 'punycode';
 
 const IDNA_PREFIX = 'xn--';
 
@@ -9,7 +9,7 @@ const decodeIDNA = domain => {
     .split('.')
     .map(part => part.indexOf(IDNA_PREFIX) === 0 ? punycode.decode(part.slice(IDNA_PREFIX.length)) : part)
     .join('.');
-}
+};
 
 const getHostname = url => {
   const parser = document.createElement('a');
@@ -17,10 +17,10 @@ const getHostname = url => {
   return parser.hostname;
 };
 
-class Card extends React.PureComponent {
+export default class Card extends React.PureComponent {
 
   static propTypes = {
-    card: ImmutablePropTypes.map
+    card: ImmutablePropTypes.map,
   };
 
   renderLink () {
@@ -95,6 +95,5 @@ class Card extends React.PureComponent {
       return null;
     }
   }
-}
 
-export default Card;
+}

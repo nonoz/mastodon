@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-class ColumnHeader extends React.PureComponent {
+export default class ColumnHeader extends React.PureComponent {
 
   static propTypes = {
     icon: PropTypes.string,
@@ -9,7 +9,7 @@ class ColumnHeader extends React.PureComponent {
     active: PropTypes.bool,
     onClick: PropTypes.func,
     hideOnMobile: PropTypes.bool,
-    columnHeaderId: PropTypes.string
+    columnHeaderId: PropTypes.string,
   };
 
   handleClick = () => {
@@ -34,5 +34,3 @@ class ColumnHeader extends React.PureComponent {
   }
 
 }
-
-export default ColumnHeader;

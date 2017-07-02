@@ -55,6 +55,7 @@ class MediaAttachment < ApplicationRecord
   validates :account, presence: true
 
   scope :attached, -> { where.not(status_id: nil) }
+  scope :unattached, -> { where(status_id: nil) }
   scope :local, -> { where(remote_url: '') }
   default_scope { order(id: :asc) }
 
@@ -87,7 +88,8 @@ class MediaAttachment < ApplicationRecord
                 'vsync'    => 'cfr',
                 'b:v'      => '1300K',
                 'maxrate'  => '500K',
-                'crf'      => 6,
+                'bufsize'  => '1300K',
+                'crf'      => 18,
               },
             },
           },

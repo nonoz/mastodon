@@ -11,23 +11,25 @@ import { defineMessages, injectIntl } from 'react-intl';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 
 const messages = defineMessages({
-  heading: { id: 'column.favourites', defaultMessage: 'Favourites' }
+  heading: { id: 'column.favourites', defaultMessage: 'Favourites' },
 });
 
 const mapStateToProps = state => ({
   statusIds: state.getIn(['status_lists', 'favourites', 'items']),
   loaded: state.getIn(['status_lists', 'favourites', 'loaded']),
-  me: state.getIn(['meta', 'me'])
+  me: state.getIn(['meta', 'me']),
 });
 
-class Favourites extends ImmutablePureComponent {
+@connect(mapStateToProps)
+@injectIntl
+export default class Favourites extends ImmutablePureComponent {
 
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     statusIds: ImmutablePropTypes.list.isRequired,
     loaded: PropTypes.bool,
     intl: PropTypes.object.isRequired,
-    me: PropTypes.number.isRequired
+    me: PropTypes.number.isRequired,
   };
 
   componentWillMount () {
@@ -39,7 +41,7 @@ class Favourites extends ImmutablePureComponent {
   }
 
   render () {
-    const { statusIds, loaded, intl, me } = this.props;
+    const { loaded, intl } = this.props;
 
     if (!loaded) {
       return (
@@ -58,5 +60,3 @@ class Favourites extends ImmutablePureComponent {
   }
 
 }
-
-export default connect(mapStateToProps)(injectIntl(Favourites));

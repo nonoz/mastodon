@@ -42,24 +42,25 @@ class Account < ApplicationRecord
   MENTION_RE = /(?:^|[^\/[:word:]])@([a-z0-9_]+(?:@[a-z0-9\.\-]+[a-z0-9]+)?)/i
 
   include AccountAvatar
+  include AccountFinderConcern
   include AccountHeader
   include AccountInteractions
   include Attachmentable
   include Remotable
-  include Targetable
 
   # Local users
   has_one :user, inverse_of: :account
 
   validates :username, presence: true
-  validates :username, uniqueness: { scope: :domain, case_sensitive: true }, unless: :local?
+
+  # Remote user validations
+  validates :username, uniqueness: { scope: :domain, case_sensitive: true }, if: -> { !local? && will_save_change_to_username? }
 
   # Local user validations
-  with_options if: :local? do
-    validates :username, format: { with: /\A[a-z0-9_]+\z/i }, uniqueness: { scope: :domain, case_sensitive: false }, length: { maximum: 30 }
-    validates :display_name, length: { maximum: 30 }
-    validates :note, length: { maximum: 160 }
-  end
+  validates :username, format: { with: /\A[a-z0-9_]+\z/i }, uniqueness: { scope: :domain, case_sensitive: false }, length: { maximum: 30 }, if: -> { local? && will_save_change_to_username? }
+  validates_with UnreservedUsernameValidator, if: -> { local? && will_save_change_to_username? }
+  validates :display_name, length: { maximum: 30 }, if: -> { local? && will_save_change_to_display_name? }
+  validates :note, length: { maximum: 160 }, if: -> { local? && will_save_change_to_note? }
 
   # Timelines
   has_many :stream_entries, inverse_of: :account, dependent: :destroy
@@ -89,6 +90,8 @@ class Account < ApplicationRecord
   scope :recent, -> { reorder(id: :desc) }
   scope :alphabetic, -> { order(domain: :asc, username: :asc) }
   scope :by_domain_accounts, -> { group(:domain).select(:domain, 'COUNT(*) AS accounts_count').order('accounts_count desc') }
+  scope :matches_username, ->(value) { where(arel_table[:username].matches("#{value}%")) }
+  scope :matches_display_name, ->(value) { where(arel_table[:display_name].matches("#{value}%")) }
 
   delegate :email,
            :current_sign_in_ip,
@@ -99,7 +102,7 @@ class Account < ApplicationRecord
            prefix: true,
            allow_nil: true
 
-  delegate :allowed_languages, to: :user, prefix: false, allow_nil: true
+  delegate :filtered_languages, to: :user, prefix: false, allow_nil: true
 
   def local?
     domain.nil?
@@ -119,10 +122,6 @@ class Account < ApplicationRecord
 
   def subscribed?
     subscription_expires_at.present?
-  end
-
-  def followers_domains
-    followers.reorder(nil).pluck('distinct accounts.domain')
   end
 
   def keypair
@@ -160,25 +159,8 @@ class Account < ApplicationRecord
   end
 
   class << self
-    def find_local!(username)
-      find_remote!(username, nil)
-    end
-
-    def find_remote!(username, domain)
-      return if username.blank?
-      where('lower(accounts.username) = ?', username.downcase).where(domain.nil? ? { domain: nil } : 'lower(accounts.domain) = ?', domain&.downcase).take!
-    end
-
-    def find_local(username)
-      find_local!(username)
-    rescue ActiveRecord::RecordNotFound
-      nil
-    end
-
-    def find_remote(username, domain)
-      find_remote!(username, domain)
-    rescue ActiveRecord::RecordNotFound
-      nil
+    def domains
+      reorder(nil).pluck('distinct accounts.domain')
     end
 
     def triadic_closures(account, limit: 5, offset: 0)
@@ -195,6 +177,7 @@ class Account < ApplicationRecord
           account_id IN (SELECT * FROM first_degree)
           AND target_account_id NOT IN (SELECT * FROM first_degree)
           AND target_account_id NOT IN (:excluded_account_ids)
+          AND accounts.suspended = false
         GROUP BY target_account_id, accounts.id
         ORDER BY count(account_id) DESC
         OFFSET :offset
@@ -217,6 +200,7 @@ class Account < ApplicationRecord
           ts_rank_cd(#{textsearch}, #{query}, 32) AS rank
         FROM accounts
         WHERE #{query} @@ #{textsearch}
+          AND accounts.suspended = false
         ORDER BY rank DESC
         LIMIT ?
       SQL
@@ -234,6 +218,7 @@ class Account < ApplicationRecord
         FROM accounts
         LEFT OUTER JOIN follows AS f ON (accounts.id = f.account_id AND f.target_account_id = ?) OR (accounts.id = f.target_account_id AND f.account_id = ?)
         WHERE #{query} @@ #{textsearch}
+          AND accounts.suspended = false
         GROUP BY accounts.id
         ORDER BY rank DESC
         LIMIT ?
@@ -250,10 +235,6 @@ class Account < ApplicationRecord
       query      = "to_tsquery('simple', ''' ' || #{terms} || ' ''' || ':*')"
 
       [textsearch, query]
-    end
-
-    def follow_mapping(query, field)
-      query.pluck(field).each_with_object({}) { |id, mapping| mapping[id] = true }
     end
   end
 
